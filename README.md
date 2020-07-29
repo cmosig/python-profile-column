@@ -23,9 +23,9 @@ for details.
   `!kernprof -l %`. 
 
 * `UpdateProfileColumn()` searches for output file of kernprof in the current
-  directory and displays the percentages in Vim's signcolumn. Note that the
-  sign-column can display a maximum of two characters and therefore 100 is
-  displayed as 10. 
+  directory and displays the percentages in Vim's signcolumn. The largest
+  number is printed in a different color. Note that the sign-column can display
+  a maximum of two characters and therefore 100 is displayed as 10. 
 
 * `RunAndPrintBackground()` runs `RunKernprofBackground()` first and then `UpdateProfileColumn()`.
 
@@ -35,3 +35,9 @@ for details.
 
 * [kernprof](https://github.com/rkern/line_profiler)
 * Vim..
+
+# TODOs
+
+* create custom colors for better highlighting of profile results
+* make it faster
+* add docs
