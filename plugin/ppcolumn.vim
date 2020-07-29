@@ -1,10 +1,20 @@
 " enable sign column
 set signcolumn=yes
 
-function! UpdateProfileColumn()
+function! RunKernprofBackground()
+    " save first
+    execute ":w<cr>"
+
     " run profiled script
     call system("kernprof -l ". expand('%'))
+endfunction
 
+function! RunAndPrint()
+    call RunKernprofBackground()
+    call UpdateProfileColumn()
+endfunction
+
+function! UpdateProfileColumn()
     " remove all old signs
     call sign_unplace('*')
 
@@ -57,4 +67,3 @@ function! UpdateProfileColumn()
         let counter += 1
     endwhile
 endfunction
-
