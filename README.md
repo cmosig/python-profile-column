@@ -3,11 +3,18 @@
 Vim plugin to display the [kernprof](https://github.com/rkern/line_profiler)
 profile results in the sign-column.
 
-# Installations
+# Installation
 
-Simply using Vundle.
+Simply use Vundle.
 
 # Functions
+
+TLDR: `RunAndPrintForeground()` to save, execute (+profile) python script, and
+print output to the sign-column.
+
+IMPORTANT: Python functions that you want profiled need to be annotated with
+`@profile`. Read the [kernprof documentation](https://github.com/rkern/line_profiler)
+for details.
 
 * `RunKernprofBackground()` runs the python script in the current buffer using
   `kernprof -l <script>` in the background. The script output is not visible.
