@@ -1,6 +1,14 @@
 " enable sign column
 set signcolumn=yes
 
+function! RunKernprofForeground()
+    " save first
+    write
+    
+    " run script in foreground
+    !kernprof -l % 
+endfunction
+
 function! RunKernprofBackground()
     " save first
     write
@@ -9,8 +17,13 @@ function! RunKernprofBackground()
     call system("kernprof -l ". expand('%'))
 endfunction
 
-function! RunAndPrint()
+function! RunAndPrintBackground()
     call RunKernprofBackground()
+    call UpdateProfileColumn()
+endfunction
+
+function! RunAndPrintForeground()
+    call RunKernprofForeground()
     call UpdateProfileColumn()
 endfunction
 
