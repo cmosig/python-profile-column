@@ -15,11 +15,18 @@ function! RunAndPrint()
 endfunction
 
 function! UpdateProfileColumn()
+    let profile_file = expand('%') . ".lprof"
+
+    " check if profile file exists
+    if !filereadable(profile_file)
+        exec echo("Profile file does not exist. Call RunKernprofBackground() first.")
+        return
+
     " remove all old signs
     call sign_unplace('*')
 
     " command to get ascii representation of kernprof results
-    let command = "python3 -m line_profiler " . expand('%') .  ".lprof | tail +11 | awk 'NF' |"
+    let command = "python3 -m line_profiler " . profile_file . " | tail +11 | awk 'NF' |"
 
     " the percentages each line took
     let profileNums = systemlist(command . "awk -F ' ' '{print $5}'")
