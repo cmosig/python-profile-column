@@ -19,7 +19,7 @@ function! UpdateProfileColumn()
 
     " check if profile file exists
     if !filereadable(profile_file)
-        exec echo("Profile file does not exist. Call RunKernprofBackground() first.")
+        echom "Profile file does not exist. Call RunKernprofBackground() first."
         return
 
     " remove all old signs
