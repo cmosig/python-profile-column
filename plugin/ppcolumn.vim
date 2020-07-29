@@ -3,7 +3,7 @@ set signcolumn=yes
 
 function! RunKernprofBackground()
     " save first
-    execute ":w<cr>"
+    write
 
     " run profiled script
     call system("kernprof -l ". expand('%'))
@@ -21,6 +21,7 @@ function! UpdateProfileColumn()
     if !filereadable(profile_file)
         echom "Profile file does not exist. Call RunKernprofBackground() first."
         return
+    endif
 
     " remove all old signs
     call sign_unplace('*')
