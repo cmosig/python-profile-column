@@ -1,5 +1,7 @@
 # python-profile-column
-vim plugin to display the kernprof profile results in the sign column
+
+Vim plugin to display the [kernprof](https://github.com/rkern/line_profiler)
+profile results in the sign-column.
 
 # Installations
 
@@ -16,3 +18,8 @@ Simply using Vundle.
   displayed as 10. 
 
 * `RunAndPrint()` runs `RunKernprofBackground()` first and then `UpdateProfileColumn()`.
+
+# Requirements
+
+* [kernprof](https://github.com/rkern/line_profiler)
+* Vim..
