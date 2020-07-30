@@ -41,5 +41,6 @@ for details.
 * create custom colors for better highlighting of profile results
 * catch handle functions in functions
 * functions without profile. e.g., when using joblib
+* add option to automatically load profile when opening file
 * make it faster
 * add docs
