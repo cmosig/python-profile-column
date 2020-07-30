@@ -39,5 +39,7 @@ for details.
 # TODOs
 
 * create custom colors for better highlighting of profile results
+* catch handle functions in functions
+* functions without profile. e.g., when using joblib
 * make it faster
 * add docs
